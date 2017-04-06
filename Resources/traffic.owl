@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://dais-ita.org/traffic#"
+     xml:base="https://dais-ita.org/traffic"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:k_addr="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#k_addr:"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:traffic="https://dais-ita.org/traffic/"
+     xmlns:tags="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#">
+    <owl:Ontology rdf:about="https://dais-ita.org/traffic">
+        <owl:imports rdf:resource="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/date -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/date"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/description"/>
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/title"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#alt -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#alt">
+        <rdfs:comment>The WGS84 altitude of a SpatialThing (decimal meters 
+above the local reference ellipsoid).</rdfs:comment>
+        <rdfs:label>altitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:comment>The WGS84 latitude of a SpatialThing (decimal degrees).</rdfs:comment>
+        <rdfs:label>latitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:subPropertyOf rdf:resource="http://xmlns.com/foaf/0.1/based_near"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#long -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#long">
+        <rdfs:comment>The WGS84 longitude of a SpatialThing (decimal degrees).</rdfs:comment>
+        <rdfs:label>longitude</rdfs:label>
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/based_near -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/based_near"/>
+    
+
+
+    <!-- https://dais-ita.org/traffic/frameNumber -->
+
+    <owl:AnnotationProperty rdf:about="https://dais-ita.org/traffic/frameNumber">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:domain rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://dais-ita.org/traffic/pixelXSpeed -->
+
+    <owl:AnnotationProperty rdf:about="https://dais-ita.org/traffic/pixelXSpeed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:domain rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://dais-ita.org/traffic/pixelYSpeed -->
+
+    <owl:AnnotationProperty rdf:about="https://dais-ita.org/traffic/pixelYSpeed">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:domain rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://dais-ita.org/traffic/posXinCamera -->
+
+    <owl:AnnotationProperty rdf:about="https://dais-ita.org/traffic/posXinCamera">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:domain rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://dais-ita.org/traffic/posYinCamera -->
+
+    <owl:AnnotationProperty rdf:about="https://dais-ita.org/traffic/posYinCamera">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:domain rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://dais-ita.org/traffic/speedLimit -->
+
+    <owl:AnnotationProperty rdf:about="https://dais-ita.org/traffic/speedLimit">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#location -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location"/>
+    
+
+
+    <!-- https://dais-ita.org/traffic/has_movement -->
+
+    <owl:ObjectProperty rdf:about="https://dais-ita.org/traffic/has_movement">
+        <rdfs:domain rdf:resource="https://dais-ita.org/traffic/Car"/>
+        <rdfs:range rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Point -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing"/>
+        <rdfs:comment> 
+Uniquely identified by lat/long/alt. i.e.
+
+spaciallyIntersects(P1, P2) :- lat(P1, LAT), long(P1, LONG), alt(P1, ALT),
+  lat(P2, LAT), long(P2, LONG), alt(P2, ALT).
+
+sameThing(P1, P2) :- type(P1, Point), type(P2, Point), spaciallyIntersects(P1, P2).
+  </rdfs:comment>
+        <rdfs:comment>A point, typically described using a coordinate system relative to Earth, such as WGS84.
+  </rdfs:comment>
+        <rdfs:label>point</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing">
+        <rdfs:comment>Anything with spatial extent, i.e. size, shape, or position.
+ e.g. people, places, bowling balls, as well as abstract areas like cubes.
+</rdfs:comment>
+        <rdfs:label>SpatialThing</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://dais-ita.org/traffic/Camera -->
+
+    <owl:Class rdf:about="https://dais-ita.org/traffic/Camera">
+        <rdfs:subClassOf rdf:resource="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#can_have_address"/>
+    </owl:Class>
+    
+
+
+    <!-- https://dais-ita.org/traffic/Car -->
+
+    <owl:Class rdf:about="https://dais-ita.org/traffic/Car"/>
+    
+
+
+    <!-- https://dais-ita.org/traffic/CarMovement -->
+
+    <owl:Class rdf:about="https://dais-ita.org/traffic/CarMovement"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://dais-ita.org/traffic/camera01460 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/camera01460">
+        <rdf:type rdf:resource="https://dais-ita.org/traffic/Camera"/>
+        <tags:has_address rdf:resource="https://dais-ita.org/traffic/address+51.6301-0.0782"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">01460</rdfs:label>
+        <wgs84_pos:location rdf:resource="https://dais-ita.org/traffic/location+51.6301-0.0782"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/car435e3065 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/car435e3065">
+        <rdf:type rdf:resource="https://dais-ita.org/traffic/Car"/>
+        <traffic:has_movement rdf:resource="https://dais-ita.org/traffic/car435e3065mov1"/>
+        <traffic:has_movement rdf:resource="https://dais-ita.org/traffic/car435e3065mov2"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">435e3065</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/car435e3065mov1 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/car435e3065mov1">
+        <rdf:type rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+        <traffic:frameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int">144</traffic:frameNumber>
+        <traffic:pixelXSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-0.016143799</traffic:pixelXSpeed>
+        <traffic:pixelYSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.8400879</traffic:pixelYSpeed>
+        <traffic:posXinCamera rdf:datatype="http://www.w3.org/2001/XMLSchema#float">123.0</traffic:posXinCamera>
+        <traffic:posYinCamera rdf:datatype="http://www.w3.org/2001/XMLSchema#float">24.0</traffic:posYinCamera>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/car435e3065mov2 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/car435e3065mov2">
+        <rdf:type rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+        <traffic:frameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int">145</traffic:frameNumber>
+        <traffic:pixelXSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.0065307617</traffic:pixelXSpeed>
+        <traffic:pixelYSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-0.9139099</traffic:pixelYSpeed>
+        <traffic:posXinCamera rdf:datatype="http://www.w3.org/2001/XMLSchema#float">123.0</traffic:posXinCamera>
+        <traffic:posYinCamera rdf:datatype="http://www.w3.org/2001/XMLSchema#float">27.0</traffic:posYinCamera>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/car5b06b4e3 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/car5b06b4e3">
+        <rdf:type rdf:resource="https://dais-ita.org/traffic/Car"/>
+        <traffic:has_movement rdf:resource="https://dais-ita.org/traffic/car5b06b4e3mov1"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">5b06b4e3</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/car5b06b4e3mov1 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/car5b06b4e3mov1">
+        <rdf:type rdf:resource="https://dais-ita.org/traffic/CarMovement"/>
+        <traffic:frameNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#int">144</traffic:frameNumber>
+        <traffic:pixelXSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-0.034576416</traffic:pixelXSpeed>
+        <traffic:pixelYSpeed rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-1.7939911</traffic:pixelYSpeed>
+        <traffic:posXinCamera rdf:datatype="http://www.w3.org/2001/XMLSchema#float">223.0</traffic:posXinCamera>
+        <traffic:posYinCamera rdf:datatype="http://www.w3.org/2001/XMLSchema#float">126.0</traffic:posYinCamera>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/address+51.6301-0.0782 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/address+51.6301-0.0782">
+        <rdf:type rdf:resource="https://raw.github.com/doroam/planning-do-roam/master/Ontology/tags.owl#address"/>
+        <k_addr:street rdf:datatype="http://www.w3.org/2001/XMLSchema#string">?-1</k_addr:street>
+        <traffic:speedLimit rdf:datatype="http://www.w3.org/2001/XMLSchema#string">40 mph</traffic:speedLimit>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://dais-ita.org/traffic/location+51.6301-0.0782 -->
+
+    <owl:NamedIndividual rdf:about="https://dais-ita.org/traffic/location+51.6301-0.0782">
+        <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+        <wgs84_pos:lat rdf:datatype="http://www.w3.org/2001/XMLSchema#string">51.6301</wgs84_pos:lat>
+        <wgs84_pos:long rdf:datatype="http://www.w3.org/2001/XMLSchema#string">-0.0782</wgs84_pos:long>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#">
+        <dc:date>$Date: 2009/04/20 15:00:30 $</dc:date>
+        <rdfs:label>geo</rdfs:label>
+        <dc:description>A vocabulary for representing latitude, longitude and 
+ altitude information in the WGS84 geodetic reference datum. 
+ Version $Id: wgs84_pos.rdf,v 1.22 2009/04/20 15:00:30 timbl Exp $. See http://www.w3.org/2003/01/geo/ for more details.</dc:description>
+        <rdfs:comment>
+Recent changes to this namespace:
+$Log: wgs84_pos.rdf,v $
+Revision 1.22  2009/04/20 15:00:30  timbl
+Remove the time bits which have been deal with elsewhere eg in iCal.
+
+Revision 1.21  2009/04/20 12:52:47  timbl
+try again
+
+Revision 1.20  2009/04/20 12:42:11  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.19  2009/04/20 12:36:31  timbl
+Add Event (edited ages ago and never checked in), and location (following discussion http://chatlogs.planetrdf.com/swig/2009-04-20#T12-36-09)
+
+Revision 1.18  2006/02/01 22:01:04  danbri
+Clarified that lat and long are decimal degrees, and that alt is decimal metres about local reference ellipsoid
+
+Revision 1.17  2004/02/06 17:38:12  danbri
+Fixed a bad commit screwup
+
+Revision 1.15  2003/04/19 11:24:08  danbri
+Fixed the typo even more.
+
+Revision 1.14  2003/04/19 11:16:56  danbri
+fixed a typo
+
+Revision 1.13  2003/02/19 22:27:27  connolly
+relaxed domain constraints on lat/long/alt from Point to SpatialThing
+
+Revision 1.12  2003/01/12 01:41:41  danbri
+Trying local copy of XSLT doc.
+
+Revision 1.11  2003/01/12 01:20:18  danbri
+added a link to morten&apos;s xslt rdfs viewer.
+
+Revision 1.10  2003/01/11 18:56:49  danbri
+Removed datatype range from lat and long properties, since they would
+have required each occurance of the property to mention the datatype.
+
+Revision 1.9  2003/01/11 11:41:31  danbri
+Another typo; repaired rdfs:Property to rdf:Property x4
+
+Revision 1.8  2003/01/11 11:05:02  danbri
+Added an rdfs:range for each lat/long/alt property,
+http://www.w3.org/2001/XMLSchema#float
+
+Revision 1.7  2003/01/10 20:25:16  danbri
+Longer rdfs:comment for Point, trying to be Earth-centric and neutral about
+coordinate system(s) at the same time. Feedback welcomed.
+
+Revision 1.6  2003/01/10 20:18:30  danbri
+Added CVS log comments into the RDF/XML as an rdfs:comment property of the
+vocabulary. Note that this is not common practice (but seems both harmless
+and potentially useful).
+
+
+revision 1.5
+date: 2003/01/10 20:14:31;  author: danbri;  state: Exp;  lines: +16 -5
+Updated schema:
+Added a dc:date, added url for more info. Changed the rdfs:label of the
+namespace from gp to geo. Added a class Point, set as the rdfs:domain of
+each property. Added XML comment on the lat_long property suggesting that
+we might not need it (based on #rdfig commentary from implementors).
+
+revision 1.4
+date: 2003/01/10 20:01:07;  author: danbri;  state: Exp;  lines: +6 -5
+Fixed typo; several rdfs:about attributes are now rdf:about. Thanks to MortenF in
+#rdfig for catching this error.
+
+revision 1.3
+date: 2003/01/10 11:59:03;  author: danbri;  state: Exp;  lines: +4 -3
+fixed buglet in vocab, added more wgs links
+
+revision 1.2
+date: 2003/01/10 11:01:11;  author: danbri;  state: Exp;  lines: +4 -4
+Removed alt from the as-a-flat-string property, and switched from
+space separated to comma separated.
+
+revision 1.1
+date: 2003/01/10 10:53:23;  author: danbri;  state: Exp;
+basic geo vocab
+
+</rdfs:comment>
+        <dc:title>WGS84 Geo Positioning: an RDF vocabulary</dc:title>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat_long">
+        <rdfs:comment>A comma-separated representation of a latitude, longitude coordinate.</rdfs:comment>
+        <rdfs:label>lat/long</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#location">
+        <rdfs:label>location</rdfs:label>
+        <rdfs:comment>The relation between something and the point, 
+ or other geometrical thing in space, where it is.  For example, the realtionship between
+ a radio tower and a Point with a given lat and long.
+ Or a relationship between a park and its outline as a closed arc of points, or a road and
+ its location as a arc (a sequence of points).
+ Clearly in practice there will be limit to the accuracy of any such statement, but one would expect
+ an accuracy appropriate for the size of the object and uses such as mapping .
+ </rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+
